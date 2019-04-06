@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: junit-4.12.jar Spigot-1.12.2.jar
+

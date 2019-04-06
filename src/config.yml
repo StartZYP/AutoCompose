@@ -1,0 +1,47 @@
+AutoCompose:
+  #这里是命令如 AutoCompose c1 权限也是 AutoCompose.c1 所有权限是AutoCompose.*
+  c1:
+    Item1:
+      DisPlayerKey: "Lore包含"
+      LoreKey: "必须包含这条|也必须包含这条"
+      Stack: 2
+      #需求个数
+    Item2:
+      DisPlayerKey: "石河子"
+      LoreKey: "东土大唐|墨菲特"
+      Stack: 3
+    Item3:
+      DisPlayerKey: "东三省"
+      LoreKey: "三唑仑|噶额"
+      Stack: 1
+    Item4:
+      DisPlayerKey: "狐狸精"
+      LoreKey: "胡拔刀|访问"
+      Stack: 2
+  c2:
+    Item1:
+      DisPlayerKey: "Lore包含"
+      LoreKey: "必须包含这条|也必须包含这条"
+      Stack: 1
+      #需求个数
+    Item2:
+      DisPlayerKey: "Lore包含"
+      LoreKey: "必须包含这条|也必须包含这条"
+      Stack: 1
+      #需求个数
+    Item3:
+      DisPlayerKey: "Lore包含"
+      LoreKey: "必须包含这条|也必须包含这条"
+      Stack: 1
+      #需求个数
+MsgPermission: "§c§l您所需的权限不足"
+MsgCantCompose: "§c§l合成材料不足,请回去收集"
+MsgPackgeFull: "§e合成此配方背包中物品必须小于{Number}个物品谢谢合作"
+IsCommands:
+  c1:
+    cmd: spawn {Player}
+    PackgeSize: 10
+    #背包中的物品要少于这个数才能合成
+  c2:
+    cmd: eco give {Player} 500
+    PackgeSize: 20

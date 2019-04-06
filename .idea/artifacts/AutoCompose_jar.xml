@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="AutoCompose:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AutoCompose_jar</output-path>
+    <root id="root">
+      <element id="archive" name="AutoCompose.jar">
+        <element id="module-output" name="AutoCompose" />
+      </element>
+    </root>
+  </artifact>
+</component>
