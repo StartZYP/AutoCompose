@@ -40,12 +40,12 @@ public class ZythonMain extends JavaPlugin {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player&&label.equalsIgnoreCase("AutoCompose")&&args.length==1){
-            System.out.println("ok");
+//            System.out.println("ok");
             if (args[0].equalsIgnoreCase("reload")){
-
+                ReloadConfig();
             }
             if (ComposeKey.containsKey(args[0])){
-                System.out.println("确认有合成列表");
+//                System.out.println("确认有合成列表");
                 if (!sender.hasPermission("AutoCompose."+args[0])){
                     sender.sendMessage(MsgPermission);
                     return false;
@@ -53,11 +53,10 @@ public class ZythonMain extends JavaPlugin {
                 List<Compose> Itemlist = ComposeKey.get(args[0]);
                 Player player =(Player)sender;
                 Inventory inv = player.getInventory();
-//                List<ItemStack> itemStacks = Arrays.asList(inv.getContents());
                 List<ItemStack> itemStacks =Arrays.stream(inv.getContents()).filter(itemStack -> itemStack!=null&&itemStack.getType()!=Material.AIR).collect(Collectors.toList());
-                System.out.println(itemStacks.size()+"背包有");
+//                System.out.println(itemStacks.size()+"背包有");
                 String HasNumber = IsCommands.get(args[0])[1];
-                System.out.println("比对背包"+HasNumber);
+//                System.out.println("比对背包"+HasNumber);
                 if (!(itemStacks.size()<=Integer.parseInt(HasNumber))){
                     player.sendMessage(MsgPackgeFull.replace("{Number}",HasNumber));
                     return false;
@@ -82,7 +81,7 @@ public class ZythonMain extends JavaPlugin {
                                 System.out.println(compose.DisPlayerKey);
                                 if (DisPlayer!=null&&DisPlayer.contains(compose.DisPlayerKey)){
                                     String[] arrys = compose.LoreKey.split("//|");
-                                    System.out.println("进入列");
+//                                    System.out.println("进入列");
                                     if (HasComposeLore(Lores,arrys)){
                                         LastItems.put(item,compose.Stack);
                                     }
@@ -91,9 +90,9 @@ public class ZythonMain extends JavaPlugin {
                         }
                     }
                 }
-                System.out.println(Itemlist.size()+"he "+LastItems.size());
+//                System.out.println(Itemlist.size()+"he "+LastItems.size());
                 if (LastItems.size()==Itemlist.size()){
-                    System.out.println("正在合成");
+//                    System.out.println("正在合成");
                     Set<ItemStack> removeitemStack = LastItems.keySet();
                     for (ItemStack item:removeitemStack){
                         inv.remove(item);
@@ -117,8 +116,8 @@ public class ZythonMain extends JavaPlugin {
                 a++;
             }
         }
-        System.out.println(arrys.length+"判断长度");
-        System.out.println(a);
+//        System.out.println(arrys.length+"判断长度");
+//        System.out.println(a);
         return arrys.length==a;
     }
 
